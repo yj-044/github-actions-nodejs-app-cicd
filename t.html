@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>실습문제 9-3</title>
+    <script>
+        function doCalc(e) {
+            if(e.key == "Enter"){
+                let exp = document.getElementById("exp");
+                let res = document.getElementById("res");
+                res.value=eval(exp.value);
+            }
+        }
+        function adder(a,b){
+            let sum;
+            sum=a+b;
+            return sum;
+        }
+        function f(e) {
+            alert(e.type);
+        }
+        document.getElementById("p").onmouseover = f;
+    </script>
+</head>
+<body>
+    <h2>계산기 만들기</h2>
+    <hr>
+   <p>수식을 입력하고 &lt;Enter&gt;를 입력하세요.</p>
+    <form>
+        식 <input type="text" id="exp" onkeydown="doCalc(event);"><br>
+        값 <input type="text" id="res">
+    </form>
+    <a href="https://www.daum.com/">다음</a>
+    <form name="fo" method="get">
+        사용자 ID : <input type="text" size="15" value=""><br>
+        비밀번호 : <input type="password" size="15" value="">
+                    <input type="submit" value="완료">
+    </form>
+    <textarea id="srcText" rows="10" cols="50"></textarea><br>
+    <button onclick="showHTML()">HTML 문서 출력하기</button>
+    <button onclick="history.back()">back()</button>
+    <button onclick="history.forward()">forward()</button>
+    <button onclick="history.go(-1)">go(-1)</button>
+    <canvas id="a" style="background-color: blue" width="10"></canvas>
+    <script> let canvas = document.getElementById("a")
+    let context = canvas.getContext("2d")
+    context.beginpath();
+    context.stroke();
+    </script>
+    let div = document.getElementById("a");
+    let span = document.createElementById("a");
+    span.innerHTML = "hello";
+    div.appendChild(span);
+</body>
+</html>
